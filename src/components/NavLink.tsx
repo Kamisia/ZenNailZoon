@@ -7,7 +7,14 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
-  return <RouterNavLink to={to}>{label}</RouterNavLink>;
+  return (
+    <RouterNavLink
+      className={"hover:text-red-950 ease-in-out duration-300"}
+      to={to}
+    >
+      {label}
+    </RouterNavLink>
+  );
 };
 
 export default NavLink;
