@@ -1,74 +1,76 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import BusinessCard from "../BusinessCard";
+import "@testing-library/jest-dom";
 
-// Mock data
-const validPhoneNumber = "123456789";
-const formattedPhoneNumber = "123-456-789";
-const invalidPhoneNumber = "12345";
-const validEmail = "test@example.com";
-const invalidEmail = "invalid-email";
-const text = "Booking Now!";
+// Mock SocialMediaLinks component
+jest.mock("../SocialMediaLinks", () => () => (
+  <div data-testid="social-media-links"></div>
+));
 
 describe("BusinessCard component", () => {
-  test("renders correctly with valid props", () => {
+  test("renders the BusinessCard with valid phone number and email", () => {
     render(
       <BusinessCard
-        number={validPhoneNumber}
-        mailAddress={validEmail}
-        text={text}
+        number="123456789"
+        mailAddress="test@example.com"
+        text="Test Business"
       />
     );
 
-    expect(screen.getByText(formattedPhoneNumber)).toBeInTheDocument();
-    expect(screen.getByText(validEmail)).toBeInTheDocument();
-    expect(screen.getByText(text)).toBeInTheDocument();
+    expect(screen.getByText("Test Business")).toBeInTheDocument();
+    expect(screen.getByText("123-456-789")).toBeInTheDocument();
+    expect(screen.getByText("test@example.com")).toBeInTheDocument();
+    expect(screen.getByTestId("social-media-links")).toBeInTheDocument();
   });
 
   test("throws error with invalid phone number", () => {
-    const renderWithInvalidPhone = () => {
+    const invalidPhoneNumber = () => {
       render(
         <BusinessCard
-          number={invalidPhoneNumber}
-          mailAddress={validEmail}
-          text={text}
+          number="12345678"
+          mailAddress="test@example.com"
+          text="Test Business"
         />
       );
     };
-
-    expect(renderWithInvalidPhone).toThrow(
+    expect(invalidPhoneNumber).toThrow(
       "Invalid phone number. It must consist of exactly 9 digits."
     );
   });
 
   test("throws error with invalid email address", () => {
-    const renderWithInvalidEmail = () => {
+    const invalidEmailAddress = () => {
       render(
         <BusinessCard
-          number={validPhoneNumber}
-          mailAddress={invalidEmail}
-          text={text}
+          number="123456789"
+          mailAddress="invalid-email"
+          text="Test Business"
         />
       );
     };
-
-    expect(renderWithInvalidEmail).toThrow("Invalid email address.");
+    expect(invalidEmailAddress).toThrow("Invalid email address. ");
   });
 
-  test("throws error with both invalid phone number and email address", () => {
-    const renderWithBothInvalid = () => {
-      render(
-        <BusinessCard
-          number={invalidPhoneNumber}
-          mailAddress={invalidEmail}
-          text={text}
-        />
-      );
-    };
-
-    expect(renderWithBothInvalid).toThrow(
-      "Invalid phone number. It must consist of exactly 9 digits."
+  test("formats phone number correctly", () => {
+    render(
+      <BusinessCard
+        number="987654321"
+        mailAddress="test@example.com"
+        text="Test Business"
+      />
     );
+    expect(screen.getByText("987-654-321")).toBeInTheDocument();
+  });
+
+  test("renders social media links correctly", () => {
+    render(
+      <BusinessCard
+        number="123456789"
+        mailAddress="test@example.com"
+        text="Test Business"
+      />
+    );
+    expect(screen.getByTestId("social-media-links")).toBeInTheDocument();
   });
 });

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
+import SocialMediaLinks from "./SocialMediaLinks";
 interface BusinessCardProps {
   number: string;
   mailAddress: string;
@@ -33,12 +34,12 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
     throw new Error("Invalid email address. ");
   }
   return (
-    <div className="  text-amber-50  absolute  w-2/5 h-44 start-20 top-32 bg-stone-800 bg-opacity-10 rounded-lg">
+    <div className="  text-amber-50  absolute  w-2/5 h-52 start-20 top-32 bg-gray-950 bg-opacity-10 rounded-lg">
       <div className="flex flex-col  text-center center-content m-auto">
-        <h1 className=" text-5xl text-amber-50 font-bold mb-8 poetsen uppercase">
+        <h1 className=" text-5xl font-semibold italic text-amber-50  mt-2 mb-4  uppercase">
           {text}
         </h1>
-        <div className="flex flex-col justify-center m-auto text-lg  p-0  ">
+        <div className="flex flex-col justify-center m-auto text-lg  p-0 mb-6  ">
           <div className="flex flex-row gap-4 justify-start  mb-4 text-center  ">
             <FaPhone className="h-7" />
             <p className="font-sans">{formatPhoneNumber(number)}</p>
@@ -48,6 +49,16 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
             <p>{mailAddress}</p>
           </div>
         </div>
+        <SocialMediaLinks
+          fbmedia={true}
+          fbhref="https://www.facebook.com/hashtag/nail/"
+          igmedia={true}
+          ighref="https://www.instagram.com/explore/tags/nails/"
+          lnmedia={false}
+          pmedia={true}
+          phref="https://pl.pinterest.com/search/pins/?q=nail&rs=typed"
+          xmedia={false}
+        />
       </div>
     </div>
   );
