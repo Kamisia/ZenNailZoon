@@ -1,30 +1,31 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
-import NavLink from "../NavLink";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import NavLink from "../NavLink";
 
 describe("NavLink component", () => {
-  it("renders correctly", () => {
-    const { getByText } = render(
-      <Router>
-        <NavLink to="/test" label="Test Link" />
-      </Router>
-    );
+  test("renders correctly with given props", () => {
+    const href = "https://example.com";
+    const label = "Example";
 
-    expect(getByText("Test Link")).toBeInTheDocument();
+    render(<NavLink href={href} label={label} />);
+
+    const linkElement = screen.getByText(label);
+    expect(linkElement).toBeInTheDocument();
+    expect(linkElement).toHaveAttribute("href", href);
   });
 
-  it("has correct href attribute", () => {
-    const { getByText } = render(
-      <Router>
-        <NavLink to="/test" label="Test Link" />
-      </Router>
-    );
+  test("applies correct class for hover effect", () => {
+    const href = "https://example.com";
+    const label = "Example";
 
-    expect(getByText("Test Link").closest("a")).toHaveAttribute(
-      "href",
-      "/test"
+    render(<NavLink href={href} label={label} />);
+
+    const linkElement = screen.getByText(label);
+    expect(linkElement).toHaveClass(
+      "hover:text-red-950",
+      "ease-in-out",
+      "duration-300"
     );
   });
 });
