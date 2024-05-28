@@ -1,9 +1,9 @@
 import React from "react";
-
+import SectionTitleComponent from "../components/SectionTitleComponent";
 const Contact: React.FC = () => {
   return (
     <div id="contact" className="h-96">
-      dane kontaktowe do salonu + newslater
+      <SectionTitleComponent text={"Contact"} />
     </div>
   );
 };

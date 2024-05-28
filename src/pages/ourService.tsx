@@ -1,10 +1,9 @@
 import React from "react";
-
+import SectionTitleComponent from "../components/SectionTitleComponent";
 const OurService: React.FC = () => {
   return (
     <div id="ourservice" className="h-96 ">
-      {" "}
-      opis usług{" "}
+      <SectionTitleComponent text={"Our Service"} />
     </div>
   );
 };
