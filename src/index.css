@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 .logo-font {
   font-family: "Calligraffitti", cursive;
   font-weight: 400;

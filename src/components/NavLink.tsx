@@ -1,19 +1,15 @@
 import React from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
 
 interface NavLinkProps {
-  to: string;
+  href: string;
   label: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
   return (
-    <RouterNavLink
-      className={"hover:text-red-950 ease-in-out duration-300"}
-      to={to}
-    >
+    <a className={"hover:text-red-950 ease-in-out duration-300"} href={href}>
       {label}
-    </RouterNavLink>
+    </a>
   );
 };
 
