@@ -7,7 +7,10 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
   return (
-    <a className={"hover:text-red-950 ease-in-out duration-300"} href={href}>
+    <a
+      className={"hover:text-rose-200 ease-in-out duration-300 uppercase"}
+      href={href}
+    >
       {label}
     </a>
   );

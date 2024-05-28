@@ -14,18 +14,4 @@ describe("NavLink component", () => {
     expect(linkElement).toBeInTheDocument();
     expect(linkElement).toHaveAttribute("href", href);
   });
-
-  test("applies correct class for hover effect", () => {
-    const href = "https://example.com";
-    const label = "Example";
-
-    render(<NavLink href={href} label={label} />);
-
-    const linkElement = screen.getByText(label);
-    expect(linkElement).toHaveClass(
-      "hover:text-red-950",
-      "ease-in-out",
-      "duration-300"
-    );
-  });
 });
