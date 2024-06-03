@@ -6,7 +6,7 @@ const SectionTitleComponent: React.FC<SectionTitleComponentProps> = ({
   text,
 }) => {
   return (
-    <div className="flex flex-col w-screen max-w-screen-lg justify-center text-center mr-auto ml-auto">
+    <div className="flex flex-col w-screen max-w-screen-lg justify-center text-center mr-auto ml-auto mb-4">
       <h1 className="text-rose-800 uppercase text-2xl mt-2  font-medium">
         {text}
       </h1>
