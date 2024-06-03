@@ -34,7 +34,10 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
     throw new Error("Invalid email address. ");
   }
   return (
-    <div className="  text-amber-50  absolute  w-2/5 h-52 start-20 top-32 bg-gray-950 bg-opacity-10 rounded-lg">
+    <div
+      className="  text-amber-50 z-10 ml-8 mr-auto mt-auto mb-auto
+     w-3/4 md:w-2/5 h-52  bg-gray-950 bg-opacity-10 rounded-lg"
+    >
       <div className="flex flex-col  text-center center-content m-auto">
         <h1 className=" text-5xl font-semibold italic text-amber-50  mt-2 mb-4  uppercase">
           {text}

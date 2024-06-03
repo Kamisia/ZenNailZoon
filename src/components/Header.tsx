@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={"w-screen max-w-screen-lg h-96 "}
+      className={"w-screen max-w-screen-lg h-96 justify-center flex m-auto "}
     >
       <BusinessCard
         number={"123456789"}
