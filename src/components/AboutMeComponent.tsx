@@ -10,11 +10,11 @@ const AboutMeComponent: React.FC<AboutMeComponentProps> = ({
   image,
 }) => {
   return (
-    <div className="flex flex-col gap-6 w-2/6 m-2 p-4 rounded-lg  bg-rose-200">
+    <div className="flex flex-col w-full md:w-1/2  m-auto  p-5  rounded-lg  bg-rose-200">
       <div className=" flex justify-center">
-        <h1 className="text-xl ">{title}</h1>
+        <h1 className="text-xl mb-5">{title}</h1>
       </div>
-      <div className=" flex justify-center">
+      <div className=" flex justify-center mb-3">
         <img className="w-80  rounded-lg" src={image} />
       </div>
       <article>{text}</article>

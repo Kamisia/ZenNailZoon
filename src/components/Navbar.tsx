@@ -12,11 +12,11 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="fixed z-10 top-0 content-center  w-4/5 h-12 rounded-b-lg p-3 flex-row flex justify-between mr-auto ml-auto max-w-screen-md">
+    <div className="fixed z-10 top-0 content-center  w-4/5 h-12 rounded-b-lg  flex-row flex justify-between mr-auto ml-auto max-w-screen-md">
       <div className="fixed z-10 top-0 content-center text-amber-50 text-sm bg-gradient-to-r from-rose-500 to-rose-400 w-4/5 h-12 rounded-b-lg p-3 flex-row flex justify-between mr-auto ml-auto max-w-screen-md">
         <LogoComponent text={"ZenNailZoon"} />
 
-        <nav className=" hidden flex-row gap-4 md:flex">
+        <nav className=" hidden flex-row gap-4 md:flex ml-2">
           {links.map((link) => {
             const { id, url, text } = link;
             return <NavLink href={url} label={text} key={id} />;

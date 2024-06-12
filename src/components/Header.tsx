@@ -2,7 +2,14 @@ import React from "react";
 import Img from "../assets/header.jpg";
 
 import BusinessCard from "./BusinessCard";
+import ButtonComponent from "./ButtonComponent";
 const Header: React.FC = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div
       style={{
@@ -24,6 +31,12 @@ const Header: React.FC = () => {
         xmedia={false}
         pmedia={false}
       />
+      <div className="flex flex-col m-auto w-1/2 h-12  rounded-lg md:hidden justify-center text-center">
+        <ButtonComponent
+          text="Booking Now!"
+          onClick={() => scrollToSection("contact")}
+        />
+      </div>
     </div>
   );
 };

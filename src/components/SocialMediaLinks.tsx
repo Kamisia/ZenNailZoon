@@ -33,7 +33,7 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
   xhref,
 }) => {
   return (
-    <div className="flex flex-row gap-4 justify-end mr-4 text-2xl">
+    <div className="flex flex-row gap-1 md:gap-4 justify-end mr-4 text-2xl">
       {fbmedia && (
         <a
           aria-label="Facebook"
