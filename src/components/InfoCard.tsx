@@ -1,22 +1,23 @@
 import React from "react";
-import ImageComponent from "./ImageComponent";
-import image from "../assets/pattern.jpg";
-const InfoCard: React.FC = () => {
+
+export interface InfoCardProps {
+  title: string;
+  text: string;
+  image: string;
+}
+const InfoCard: React.FC<InfoCardProps> = ({ title, text, image }) => {
   return (
-    <div className="w-10/11 p-4 rounded-lg ">
-      <div className="flex flex-row content-center gap-2 m-auto justify-center ">
-        <article className="m-auto ">
+    <div className="w-10/11 mb-4 rounded-lg flex flex-col  justify-center">
+      <div className="flex flex-row content-center justify-center">
+        <article className=" md:w-1/2 ">
           <h1 className=" pb-2 m-auto text-center text-2xl text-rose-700 capitalize font-light italic">
-            Title
+            {title}
           </h1>
-          <hr className="border-rose-300 w-4/6  ml-auto mr-0" />
-          <p className="pb-2">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste odit
-            enim neque esse autem tempora? Facilis officia inventore nam animi?
-          </p>
+          <hr className="border-rose-300 w-3/5 mr-auto ml-auto  pb-2 " />
+          <p className="pb-2 pr-2">{text}</p>
         </article>
-        <div className="bg-rose-300 w-3/5 pb-1 pr-1 rounded-lg">
-          <ImageComponent url={image} />
+        <div className=" w-60 h-60 rounded-lg hidden md:flex shadow-md ">
+          <img className="rounded-lg w-60 h-60 " src={image} alt="" />
         </div>
       </div>
     </div>
