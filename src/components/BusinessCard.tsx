@@ -2,10 +2,15 @@ import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
 import SocialMediaLinks from "./SocialMediaLinks";
+import { FaHome } from "react-icons/fa";
+
 interface BusinessCardProps {
   number: string;
   mailAddress: string;
-  text: string;
+  text?: string;
+  localAddress: boolean;
+  address?: string;
+  city?: string;
 }
 const isValidPhoneNumber = (phone: string): boolean => {
   const phoneRegex = /^[0-9]{9}$/;
@@ -23,6 +28,9 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
   number,
   mailAddress,
   text,
+  city,
+  address,
+  localAddress,
 }) => {
   if (!isValidPhoneNumber(number)) {
     throw new Error(
@@ -35,14 +43,24 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
   }
   return (
     <div
-      className="hidden md:flex  text-amber-50 z-10 ml-8 mr-auto mt-auto mb-auto
-     w-3/4 md:w-2/5 h-52  bg-gray-950 bg-opacity-10 rounded-lg"
+      className="flex flex-col text-amber-50 z-10 m-auto ml-2
+     w-3/4 md:w-2/5 h-100  rounded-lg"
     >
       <div className="flex flex-col  text-center center-content m-auto">
-        <h1 className="text-2xl  md:text-3xl lg:text-5xl font-semibold italic text-amber-50  mt-2 mb-4  uppercase">
+        <h1 className="text-2xl  md:text-3xl lg:text-4xl font-semibold italic text-amber-50  mt-2 mb-4  uppercase">
           {text}
         </h1>
         <div className="flex flex-col justify-center m-auto text-lg  p-0 mb-6  ">
+          {localAddress && (
+            <div className="content-center  flex flex-row gap-4 justify-start  mb-4 text-start  ">
+              <FaHome className="h-7 mt-auto mb-auto" />
+              <div className=" flex-col">
+                <p>{address}</p>
+                <p>{city}</p>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-row gap-4 justify-start  mb-4 text-center  ">
             <FaPhone className="h-7" />
             <p className="font-sans">{formatPhoneNumber(number)}</p>

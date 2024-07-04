@@ -1,76 +1,52 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import BusinessCard from "../BusinessCard";
 import "@testing-library/jest-dom";
+import BusinessCard from "../BusinessCard";
+import SocialMediaLinks from "../SocialMediaLinks";
 
-// Mock SocialMediaLinks component
-jest.mock("../SocialMediaLinks", () => () => (
-  <div data-testid="social-media-links"></div>
-));
+// Mockowanie komponentu SocialMediaLinks
+jest.mock("../SocialMediaLinks", () =>
+  jest.fn(() => <div>Mocked SocialMediaLinks</div>)
+);
 
-describe("BusinessCard component", () => {
-  test("renders the BusinessCard with valid phone number and email", () => {
-    render(
-      <BusinessCard
-        number="123456789"
-        mailAddress="test@example.com"
-        text="Test Business"
-      />
-    );
+describe("BusinessCard Component", () => {
+  const validProps = {
+    number: "123456789",
+    mailAddress: "test@example.com",
+    text: "Business Card",
+    localAddress: true,
+    address: "123 Main St",
+    city: "Anytown",
+  };
 
-    expect(screen.getByText("Test Business")).toBeInTheDocument();
+  it("should render without crashing", () => {
+    render(<BusinessCard {...validProps} />);
+    expect(screen.getByText(/business card/i)).toBeInTheDocument();
+    expect(screen.getByText(/123 main st/i)).toBeInTheDocument();
+    expect(screen.getByText(/anytown/i)).toBeInTheDocument();
     expect(screen.getByText("123-456-789")).toBeInTheDocument();
-    expect(screen.getByText("test@example.com")).toBeInTheDocument();
-    expect(screen.getByTestId("social-media-links")).toBeInTheDocument();
+    expect(screen.getByText(/test@example.com/i)).toBeInTheDocument();
+    expect(screen.getByText("Mocked SocialMediaLinks")).toBeInTheDocument();
   });
 
-  test("throws error with invalid phone number", () => {
-    const invalidPhoneNumber = () => {
-      render(
-        <BusinessCard
-          number="12345678"
-          mailAddress="test@example.com"
-          text="Test Business"
-        />
-      );
-    };
-    expect(invalidPhoneNumber).toThrow(
+  it("should throw error for invalid phone number", () => {
+    const invalidPhoneNumberProps = { ...validProps, number: "12345" };
+    expect(() => render(<BusinessCard {...invalidPhoneNumberProps} />)).toThrow(
       "Invalid phone number. It must consist of exactly 9 digits."
     );
   });
 
-  test("throws error with invalid email address", () => {
-    const invalidEmailAddress = () => {
-      render(
-        <BusinessCard
-          number="123456789"
-          mailAddress="invalid-email"
-          text="Test Business"
-        />
-      );
-    };
-    expect(invalidEmailAddress).toThrow("Invalid email address. ");
+  it("should throw error for invalid email address", () => {
+    const invalidEmailProps = { ...validProps, mailAddress: "invalidemail" };
+    expect(() => render(<BusinessCard {...invalidEmailProps} />)).toThrow(
+      "Invalid email address. "
+    );
   });
 
-  test("formats phone number correctly", () => {
-    render(
-      <BusinessCard
-        number="987654321"
-        mailAddress="test@example.com"
-        text="Test Business"
-      />
-    );
-    expect(screen.getByText("987-654-321")).toBeInTheDocument();
-  });
-
-  test("renders social media links correctly", () => {
-    render(
-      <BusinessCard
-        number="123456789"
-        mailAddress="test@example.com"
-        text="Test Business"
-      />
-    );
-    expect(screen.getByTestId("social-media-links")).toBeInTheDocument();
+  it("should render without local address when localAddress is false", () => {
+    const propsWithoutLocalAddress = { ...validProps, localAddress: false };
+    render(<BusinessCard {...propsWithoutLocalAddress} />);
+    expect(screen.queryByText(/123 main st/i)).toBeNull();
+    expect(screen.queryByText(/anytown/i)).toBeNull();
   });
 });

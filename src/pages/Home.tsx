@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 const Home: React.FC = () => {
   return (
-    <div id="home" className="w-screen max-w-screen-lg mb-5">
+    <div id="home" className="w-screen mb-5">
       <Header />
       <article className="pr-3 pl-3 mt-2 mb-2">
         Welcome to ZenNailZoon, my professional nail styling salon where we

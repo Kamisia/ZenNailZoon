@@ -17,20 +17,22 @@ const Header: React.FC = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={"w-screen max-w-screen-lg h-96 justify-center flex m-auto "}
+      className={"w-screen h-96 justify-center flex m-auto "}
     >
-      <BusinessCard
-        number={"123456789"}
-        mailAddress={"ZenNailZoon@example.com"}
-        text={"Booking Now!"}
-        fbmedia={true}
-        fbhref="facebook.com"
-        igmedia={true}
-        ighref="instagram.com"
-        lnmedia={false}
-        xmedia={false}
-        pmedia={false}
-      />
+      <div className="m-auto hidden md:flex h-60 min-w-fit pr-5  rounded-lg bg-gray-950 bg-opacity-10 ">
+        <BusinessCard
+          number={"123456789"}
+          mailAddress={"ZenNailZoon@example.com"}
+          text={"Booking Now!"}
+          fbmedia={true}
+          fbhref="facebook.com"
+          igmedia={true}
+          ighref="instagram.com"
+          lnmedia={false}
+          xmedia={false}
+          pmedia={false}
+        />
+      </div>
       <div className="flex flex-col m-auto w-1/2 h-12  rounded-lg md:hidden justify-center text-center">
         <ButtonComponent
           text="Booking Now!"

@@ -7,12 +7,13 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col m-auto justify-center justify-items-center items-center ">
+    <div className="flex flex-col m-auto overflow-hidden   justify-center justify-items-center items-center ">
       <Navbar />
       <Home />
 
       <OurService />
       <About />
+
       <Contact />
     </div>
   );
