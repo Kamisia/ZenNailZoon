@@ -8,7 +8,7 @@ const OurService: React.FC = () => {
   return (
     <div
       id="ourservice"
-      className="w-screen max-w-screen-lg mb-5 justify-center "
+      className="w-screen max-w-screen-lg mb-5 justify-center pr-3 pl-3 "
     >
       <SectionTitleComponent text={"How we work"} />
       <article className=" max-w-screen-lg mb-5">
@@ -27,7 +27,7 @@ const OurService: React.FC = () => {
         })}
       </div>
 
-      <div className="w-screen max-w-screen-lg mb-5 justify-center ">
+      <div className="w-screen max-w-screen-lg  mb-5 justify-center ">
         <h1 className=" pb-2 m-auto text-center text-2xl text-rose-700 capitalize font-light italic mb-2">
           Our nail styling
         </h1>

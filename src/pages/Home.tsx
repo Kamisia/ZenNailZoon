@@ -4,7 +4,7 @@ const Home: React.FC = () => {
   return (
     <div id="home" className="w-screen mb-5 justify-center  ">
       <Header />
-      <div className="w-screen max-w-screen-lg mb-5 mt-5  ml-auto mr-auto">
+      <div className="w-screen max-w-screen-lg mb-5 mt-5  ml-auto mr-auto pr-3 pl-3">
         <article className="max-w-screen-lg mb-5 ">
           Welcome to ZenNailZoon, my professional nail styling salon where we
           pride ourselves on exceptional services and a relaxing atmosphere. At

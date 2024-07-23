@@ -43,7 +43,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
   }
   return (
     <div
-      className="flex flex-col text-amber-50 z-10 m-auto ml-2
+      className="flex flex-col text-amber-50 z-5 m-auto ml-2
      w-3/4 md:w-2/5 h-100  rounded-lg"
     >
       <div className="flex flex-col  text-center center-content m-auto">

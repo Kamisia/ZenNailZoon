@@ -15,9 +15,9 @@ const CarouselComponent: React.FC = () => {
       autoPlay
     >
       {portfolioImg.map((portfolio) => {
-        const { id, imageUrl } = portfolio;
+        const { id, imageUrl, author } = portfolio;
 
-        return <ImageComponent url={imageUrl} />;
+        return <ImageComponent url={imageUrl} author={author} />;
       })}
     </Carousel>
   );
