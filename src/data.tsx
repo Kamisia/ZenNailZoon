@@ -2,46 +2,56 @@ import employ1 from "./assets/employer1.jpg";
 import employ2 from "./assets/employer2.jpg";
 import pattern from "./assets/pattern.jpg";
 import sterile from "./assets/sterile.jpg";
+import quality from "./assets/quality.jpg";
+import nail1 from "./assets/nail1.jpg";
+import nail2 from "./assets/nail2.jpg";
+import nail3 from "./assets/nail3.jpg";
+import nail4 from "./assets/nail4.jpg";
+import nail5 from "./assets/nail5.jpg";
+import nail6 from "./assets/nail6.jpg";
+import nail7 from "./assets/nail7.jpg";
 export const portfolioImg = [
   {
     id: 1,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail1}`,
+    author: "Elena",
   },
   {
     id: 2,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail2}`,
+    author: "Amanda",
   },
   {
     id: 3,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail3}`,
+    author: "Elena",
   },
   {
     id: 4,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail4}`,
+    author: "Elena",
   },
   {
     id: 5,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail5}`,
+    author: "Amanda",
   },
   {
     id: 6,
 
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail6}`,
+    author: "Amanda",
   },
   {
     id: 7,
 
-    imageUrl: `${employ1}`,
-  },
-  {
-    id: 8,
-
-    imageUrl: `${employ1}`,
+    imageUrl: `${nail7}`,
+    author: "Amanda",
   },
 ];
 export const links = [
@@ -82,6 +92,6 @@ export const services = [
     id: 3,
     title: "Quality",
     text: "At ZenNailZoon, we use only the highest quality products to ensure the best results for our clients. Our nail polishes, gels, and tools are sourced from reputable brands known for their durability and safety. By investing in premium products, we guarantee long-lasting and beautiful nails for everyone who visits our salon.",
-    imageUrl: `${pattern}`,
+    imageUrl: `${quality}`,
   },
 ];
