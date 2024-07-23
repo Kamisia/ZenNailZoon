@@ -25,7 +25,8 @@ const Contact: React.FC = () => {
           <div className=" text-amber-50  mb-3  justify-items-center ">
             <h1 className="uppercase text-2xl mb-3">Subscribe Us!</h1>
             <p className="text-xl">
-              Get -10% for first visit and know about our prom
+              Get a 10% discount on your first visit and stay updated with our
+              promotions.
             </p>
           </div>
           <NewsletterComponent />
