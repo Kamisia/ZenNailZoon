@@ -1,8 +1,9 @@
 import React from "react";
+import ButtonComponent from "./ButtonComponent";
 
 const FormComponent: React.FC = () => {
   return (
-    <div className="flex flex-col w-1/2 m-auto ">
+    <div className="flex flex-col w-1/2 mr-auto ml-auto mb-5 ">
       <div className="mb-5 flex flex-col w-full">
         <input className="text-black" type="email" name="email"></input>
         <label className="mb-2" htmlFor="email">
@@ -21,9 +22,7 @@ const FormComponent: React.FC = () => {
           name="text"
         ></textarea>
       </div>
-      <button className="p-2 border-amber-50 border w-fit m-auto mr-0 mb-5">
-        Send
-      </button>
+      <ButtonComponent text={"Send"} onClick={console.log("sended form")} />
     </div>
   );
 };

@@ -6,10 +6,10 @@ import FormComponent from "../components/FormComponent";
 import imageBg from "../assets/newslatter-bg.jpg";
 const Contact: React.FC = () => {
   return (
-    <div id="contact" className="bg-rose-500 w-screen ">
+    <div id="contact" className="bg-rose-500 w-screen  items-start">
       <SectionTitleComponent text={"Contact"} textColor="amber-50" />
       {/* dane kontaktowe*/}
-      <div className="flex text-amber-50 flex-row justify-between pl-5">
+      <div className=" flex flex-col md:flex-row gap-3 items-start text-amber-50  justify-between pl-5 pr-5">
         <ContactComponent />
 
         {/*Formularz kontaktowy */}
