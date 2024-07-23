@@ -5,7 +5,7 @@ import NewsletterComponent from "../components/NewsletterComponent";
 import FormComponent from "../components/FormComponent";
 const Contact: React.FC = () => {
   return (
-    <div id="contact" className="bg-rose-400 w-screen ">
+    <div id="contact" className="bg-rose-500 w-screen ">
       <SectionTitleComponent text={"Contact"} textColor="amber-50" />
       {/* dane kontaktowe*/}
       <div className="flex text-amber-50 flex-row justify-between pl-5">
