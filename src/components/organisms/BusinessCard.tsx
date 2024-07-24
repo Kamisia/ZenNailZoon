@@ -71,14 +71,9 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
           </div>
         </div>
         <SocialMediaLinks
-          fbmedia={true}
           fbhref="https://www.facebook.com/hashtag/nail/"
-          igmedia={true}
           ighref="https://www.instagram.com/explore/tags/nails/"
-          lnmedia={false}
-          pmedia={true}
           phref="https://pl.pinterest.com/search/pins/?q=nail&rs=typed"
-          xmedia={false}
         />
       </div>
     </div>

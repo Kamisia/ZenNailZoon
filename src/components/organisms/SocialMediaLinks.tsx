@@ -8,36 +8,26 @@ import {
 } from "react-icons/fa6";
 
 interface SocialMediaLinksProps {
-  fbmedia: boolean;
   fbhref?: string;
-  igmedia: boolean;
   ighref?: string;
-  lnmedia: boolean;
   lnhref?: string;
-  pmedia: boolean;
   phref?: string;
-  xmedia: boolean;
   xhref?: string;
 }
 
 const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
   fbhref,
-  fbmedia,
-  lnmedia,
-  igmedia,
   ighref,
   lnhref,
-  pmedia,
   phref,
-  xmedia,
   xhref,
 }) => {
   return (
-    <div className="flex flex-row  text-2xl  gap-4 mr-4">
-      {fbmedia && (
+    <div className="flex flex-row text-2xl gap-4 mr-4">
+      {fbhref && (
         <a
           aria-label="Facebook"
-          className="transition duration-200 flex ease-in-out  text-amber-50 hover:text-rose-100 focus:outline-none"
+          className="transition duration-200 flex ease-in-out text-amber-50 hover:text-rose-100 focus:outline-none"
           href={fbhref}
           target="_blank"
           rel="noopener noreferrer"
@@ -45,10 +35,10 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
           <FaSquareFacebook />
         </a>
       )}
-      {igmedia && (
+      {ighref && (
         <a
           aria-label="Instagram"
-          className="transition duration-200 flex ease-in-out  text-amber-50 hover:text-rose-100 focus:outline-none"
+          className="transition duration-200 flex ease-in-out text-amber-50 hover:text-rose-100 focus:outline-none"
           href={ighref}
           target="_blank"
           rel="noopener noreferrer"
@@ -56,10 +46,10 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
           <FaSquareInstagram />
         </a>
       )}
-      {lnmedia && (
+      {lnhref && (
         <a
           aria-label="LinkedIn"
-          className="transition duration-200 flex ease-in-out  text-amber-50 hover:text-rose-100 focus:outline-none"
+          className="transition duration-200 flex ease-in-out text-amber-50 hover:text-rose-100 focus:outline-none"
           href={lnhref}
           target="_blank"
           rel="noopener noreferrer"
@@ -67,10 +57,10 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
           <FaLinkedin />
         </a>
       )}
-      {pmedia && (
+      {phref && (
         <a
           aria-label="Pinterest"
-          className="transition duration-200 flex ease-in-out  text-amber-50 hover:text-rose-100 focus:outline-none"
+          className="transition duration-200 flex ease-in-out text-amber-50 hover:text-rose-100 focus:outline-none"
           href={phref}
           target="_blank"
           rel="noopener noreferrer"
@@ -78,10 +68,10 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
           <FaSquarePinterest />
         </a>
       )}
-      {xmedia && (
+      {xhref && (
         <a
           aria-label="Twitter"
-          className="transition duration-200 flex ease-in-out  text-amber-50 hover:text-rose-100 focus:outline-none"
+          className="transition duration-200 flex ease-in-out text-amber-50 hover:text-rose-100 focus:outline-none"
           href={xhref}
           target="_blank"
           rel="noopener noreferrer"

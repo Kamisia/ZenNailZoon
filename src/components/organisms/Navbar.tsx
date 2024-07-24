@@ -31,14 +31,9 @@ const Navbar: React.FC = () => {
           <CiMenuBurger />
         </button>
         <SocialMediaLinks
-          fbmedia={true}
           fbhref="https://www.facebook.com/hashtag/nail/"
-          igmedia={true}
           ighref="https://www.instagram.com/explore/tags/nails/"
-          lnmedia={false}
-          pmedia={true}
           phref="https://pl.pinterest.com/search/pins/?q=nail&rs=typed"
-          xmedia={false}
         />
       </div>
       <div className="fixed flex flex-row  text-amber-50 md:hidden   m-auto justify-start bg-gradient-to-t from-rose-500 to-rose-400  w-2/5">
