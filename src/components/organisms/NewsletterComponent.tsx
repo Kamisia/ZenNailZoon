@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import ButtonComponent from "../atoms/ButtonComponent";
 import InputComponent from "../atoms/InputComponent";
+import ErrorMessage from "../atoms/ErrorMessage";
 
 interface IFormInputs {
   email: string;
@@ -24,11 +25,8 @@ const NewsletterComponent: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-lg md:mr-0 h-28 flex flex-col md:flex-row md:gap-1 justify-center content-center m-auto">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col md:flex-row md:gap-1"
-      >
+    <div className=" w-full max-w-lg md:mr-0 h-28 flex flex-col md:flex-row md:gap-1 justify-center content-center m-auto">
+      <form onSubmit={handleSubmit(onSubmit)} className=" w-full ">
         <InputComponent
           type="email"
           name="email"
@@ -41,10 +39,9 @@ const NewsletterComponent: React.FC = () => {
             },
           }}
           placeholder="Enter your email"
-          className="mb-2"
         />
-        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        <div className="w-2/5 max-w-48 m-auto text-amber-50">
+        {errors.email && <ErrorMessage message={errors.email.message} />}
+        <div className="max-w-48 m-auto text-amber-50">
           <ButtonComponent text="Subscribe" type="submit" />
         </div>
       </form>

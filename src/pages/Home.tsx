@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           personalized care, ensuring each client's satisfaction. We prioritize
           hygiene and safety, maintaining the highest standards in cleanliness
           and sterilization. Committed to excellence, ZenNailZoon is your top
-          choice for a premium nail care experience.{" "}
+          choice for a premium nail care experience.
         </article>
       </div>
     </div>

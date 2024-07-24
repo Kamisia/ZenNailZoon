@@ -8,7 +8,7 @@ interface BusinessCardProps {
   number: string;
   mailAddress: string;
   text?: string;
-  localAddress: boolean;
+
   address?: string;
   city?: string;
 }
@@ -30,7 +30,6 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
   text,
   city,
   address,
-  localAddress,
 }) => {
   if (!isValidPhoneNumber(number)) {
     throw new Error(
@@ -51,15 +50,15 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
           {text}
         </h1>
         <div className="flex flex-col justify-center m-auto text-lg  p-0 mb-6  ">
-          {localAddress && (
-            <div className="content-center  flex flex-row gap-4 justify-start  mb-4 text-start  ">
+          {address || city ? (
+            <div className="content-center flex flex-row gap-4 justify-start mb-4 text-start">
               <FaHome className="h-7 mt-auto mb-auto" />
-              <div className=" flex-col">
-                <p>{address}</p>
-                <p>{city}</p>
+              <div className="flex-col">
+                {address && <p>{address}</p>}
+                {city && <p>{city}</p>}
               </div>
             </div>
-          )}
+          ) : null}
 
           <div className="flex flex-row gap-4 justify-start  mb-4 text-center  ">
             <FaPhone className="h-7" />

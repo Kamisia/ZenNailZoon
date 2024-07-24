@@ -19,7 +19,7 @@ const TextAreaComponent = <T extends FieldValues>({
       name={name}
       placeholder={placeholder}
       {...register(name, validation)}
-      className="h-36 w-full p-2 text-black mb-4"
+      className="h-36 w-full p-2 text-black "
     />
   );
 };

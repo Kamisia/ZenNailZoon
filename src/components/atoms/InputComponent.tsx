@@ -44,7 +44,7 @@ const InputComponent = <T extends FieldValues>({
       name={name}
       placeholder={placeholder}
       {...(register ? register(name, validation) : {})}
-      className="w-full p-2 text-black mb-4"
+      className="w-full p-2 text-black"
     />
   );
 };

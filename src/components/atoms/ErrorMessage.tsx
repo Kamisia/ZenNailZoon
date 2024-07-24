@@ -5,7 +5,11 @@ interface ErrorMessageProps {
 }
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
-  return <p className="text-amber-50 mb-4">{message}</p>;
+  return (
+    <p className="text-amber-50 text-sm bg-amber-500 bg-opacity-60  mt-1 w-fit p-1">
+      {message}
+    </p>
+  );
 };
 
 export default ErrorMessage;

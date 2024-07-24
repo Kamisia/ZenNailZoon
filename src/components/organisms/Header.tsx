@@ -24,13 +24,8 @@ const Header: React.FC = () => {
           number={"123456789"}
           mailAddress={"ZenNailZoon@example.com"}
           text={"Booking Now!"}
-          fbmedia={true}
           fbhref="facebook.com"
-          igmedia={true}
           ighref="instagram.com"
-          lnmedia={false}
-          xmedia={false}
-          pmedia={false}
         />
       </div>
       <div className="flex flex-col m-auto w-1/2 h-12  rounded-lg md:hidden justify-center text-center">
