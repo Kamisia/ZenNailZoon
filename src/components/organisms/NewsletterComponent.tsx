@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonComponent from "./ButtonComponent";
-import InputComponent from "./InputComponent";
+import ButtonComponent from "../atoms/ButtonComponent";
+import InputComponent from "../atoms/InputComponent";
 
 const NewsletterComponent: React.FC = () => {
   const newsletter = (text) => {
@@ -8,7 +8,7 @@ const NewsletterComponent: React.FC = () => {
   };
   return (
     <div className="w-full max-w-lg md:mr-0 h-28 flex flex-col md:flex-row md:gap-1 justify-center content-center m-auto ">
-      <InputComponent />
+      <InputComponent type="email" name="email" />
       <div className=" w-2/5 max-w-48 m-auto text-amber-50 ">
         <ButtonComponent
           text="Subscribe"

@@ -1,8 +1,8 @@
 import React from "react";
-import SectionTitleComponent from "../components/SectionTitleComponent";
-import ContactComponent from "../components/ContactComponent";
-import NewsletterComponent from "../components/NewsletterComponent";
-import FormComponent from "../components/FormComponent";
+import SectionTitleComponent from "../molecules/SectionTitleComponent";
+import ContactComponent from "../organisms/ContactComponent";
+import NewsletterComponent from "../organisms/NewsletterComponent";
+import FormComponent from "../organisms/FormComponent";
 import imageBg from "../assets/newslatter-bg.jpg";
 const Contact: React.FC = () => {
   return (

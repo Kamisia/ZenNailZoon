@@ -1,8 +1,8 @@
 import React from "react";
 import { services } from "../data";
-import SectionTitleComponent from "../components/SectionTitleComponent";
-import InfoCard from "../components/InfoCard";
-import CarouselComponent from "../components/CarouselComponent";
+import SectionTitleComponent from "../components/molecules/SectionTitleComponent";
+import InfoCard from "../components/molecules/InfoCard";
+import CarouselComponent from "../components/organisms/CarouselComponent";
 
 const OurService: React.FC = () => {
   return (

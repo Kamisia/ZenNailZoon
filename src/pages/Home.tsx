@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/organisms/Header";
 const Home: React.FC = () => {
   return (
     <div id="home" className="w-screen mb-5 justify-center  ">

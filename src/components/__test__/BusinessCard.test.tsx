@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import BusinessCard from "../BusinessCard";
-import SocialMediaLinks from "../SocialMediaLinks";
+import BusinessCard from "../organisms/BusinessCard";
+import SocialMediaLinks from "../organisms/SocialMediaLinks";
 
 // Mockowanie komponentu SocialMediaLinks
 jest.mock("../SocialMediaLinks", () =>

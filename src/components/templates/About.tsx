@@ -1,7 +1,7 @@
 import React from "react";
-import SectionTitleComponent from "../components/SectionTitleComponent";
-import AboutMeComponent from "../components/AboutMeComponent";
-import { employer } from "../data";
+import SectionTitleComponent from "../molecules/SectionTitleComponent";
+import AboutMeComponent from "../molecules/AboutMeComponent";
+import { employer } from "../../data";
 
 const About: React.FC = () => {
   return (

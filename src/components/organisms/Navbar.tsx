@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import NavLink from "./NavLink";
+import NavLink from "../atoms/NavLink";
 import SocialMediaLinks from "./SocialMediaLinks";
-import LogoComponent from "./LogoComponent";
-import { links } from "../data";
+import LogoComponent from "../atoms/LogoComponent";
+import { links } from "../../data";
 import { CiMenuBurger } from "react-icons/ci";
 
 const Navbar: React.FC = () => {

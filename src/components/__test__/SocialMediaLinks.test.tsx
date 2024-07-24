@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import SocialMediaLinks from "../SocialMediaLinks";
+import SocialMediaLinks from "../organisms/SocialMediaLinks";
 import "@testing-library/jest-dom";
 describe("SocialMediaLinks component", () => {
   test("renders Facebook link when fbmedia is true", () => {

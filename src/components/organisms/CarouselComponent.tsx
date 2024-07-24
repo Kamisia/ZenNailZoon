@@ -2,8 +2,8 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { portfolioImg } from "../data";
-import ImageComponent from "./ImageComponent";
+import { portfolioImg } from "../../data";
+import ImageComponent from "../atoms/ImageComponent";
 
 const CarouselComponent: React.FC = () => {
   return (

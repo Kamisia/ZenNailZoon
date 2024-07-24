@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import LogoComponent from "../LogoComponent";
+import LogoComponent from "../atoms/LogoComponent";
 import "@testing-library/jest-dom";
 describe("LogoComponent", () => {
   it("renders the text passed as prop", () => {

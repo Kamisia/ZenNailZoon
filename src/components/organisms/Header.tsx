@@ -2,7 +2,7 @@ import React from "react";
 import Img from "../assets/header.jpg";
 
 import BusinessCard from "./BusinessCard";
-import ButtonComponent from "./ButtonComponent";
+import ButtonComponent from "../atoms/ButtonComponent";
 const Header: React.FC = () => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);

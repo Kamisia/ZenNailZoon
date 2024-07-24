@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import NavLink from "../NavLink";
+import NavLink from "../atoms/NavLink";
 
 describe("NavLink component", () => {
   test("renders correctly with given props", () => {
