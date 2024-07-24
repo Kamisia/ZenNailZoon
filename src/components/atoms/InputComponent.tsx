@@ -1,6 +1,7 @@
 import React from "react";
+import { UseFormRegister, FieldValues, RegisterOptions } from "react-hook-form";
 
-export interface InputComponentProps {
+interface InputComponentProps<T extends FieldValues> {
   type:
     | "text"
     | "email"
@@ -22,26 +23,29 @@ export interface InputComponentProps {
     | "reset"
     | "button";
   name: string;
+  register?: UseFormRegister<any>;
+  validation?: RegisterOptions;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  className?: string;
 }
 
-const InputComponent: React.FC<InputComponentProps> = ({
+const InputComponent = <T extends FieldValues>({
   type,
   name,
-  value,
-  onChange,
-}) => {
+  register,
+  validation,
+  placeholder,
+}: InputComponentProps<T>) => {
   return (
-    <div className="w-full mb-4">
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        className="w-full p-2 border border-gray-300 text-black "
-      />
-    </div>
+    <input
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      {...(register ? register(name, validation) : {})}
+      className="w-full p-2 text-black mb-4"
+    />
   );
 };
 
