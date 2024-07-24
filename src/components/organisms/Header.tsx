@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../assets/header.jpg";
+import Img from "../../assets/header.jpg";
 
 import BusinessCard from "./BusinessCard";
 import ButtonComponent from "../atoms/ButtonComponent";
