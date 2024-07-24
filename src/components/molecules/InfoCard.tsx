@@ -7,7 +7,10 @@ export interface InfoCardProps {
 }
 const InfoCard: React.FC<InfoCardProps> = ({ title, text, image }) => {
   return (
-    <div className=" w-screen max-w-screen-lg mb-5 justify-center pr-3 pl-3">
+    <div
+      data-testid="info-card-container"
+      className=" w-screen max-w-screen-lg mb-5 justify-center pr-3 pl-3"
+    >
       <div className="flex flex-row content-center justify-center">
         <article className="max-w-screen-lg w-11/12 mb-5 ">
           <h1 className=" pb-2 m-auto text-center text-2xl text-rose-700 capitalize font-light italic">
