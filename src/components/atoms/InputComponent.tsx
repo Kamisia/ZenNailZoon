@@ -37,14 +37,17 @@ const InputComponent = <T extends FieldValues>({
   register,
   validation,
   placeholder,
+  ...rest
 }: InputComponentProps<T>) => {
+  const registerProps = register ? register(name, validation) : {};
   return (
     <input
       type={type}
       name={name}
       placeholder={placeholder}
-      {...(register ? register(name, validation) : {})}
-      className="w-full p-2 text-black"
+      {...registerProps}
+      {...rest}
+      className={`w-full p-2 text-black ${rest.className || ""}`}
     />
   );
 };

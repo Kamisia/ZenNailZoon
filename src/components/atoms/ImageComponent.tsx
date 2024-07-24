@@ -8,6 +8,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ url, author }) => {
     <div
       className="flex justify-center bg-container bg-no-repeat bg-center w-full h-96"
       style={{ backgroundImage: `url(${url})` }}
+      data-testid="image-container"
     >
       {author && (
         <div className="bg-rose-800 bg-opacity-60 w-full absolute ">

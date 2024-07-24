@@ -4,25 +4,27 @@ import "@testing-library/jest-dom";
 import ButtonComponent from "../atoms/ButtonComponent";
 
 describe("ButtonComponent", () => {
-  it("renders the button with the provided text", () => {
-    const mockOnClick = jest.fn();
-    const buttonText = "Click Me";
-
-    render(<ButtonComponent text={buttonText} onClick={mockOnClick} />);
-
-    expect(
-      screen.getByRole("button", { name: buttonText })
-    ).toBeInTheDocument();
+  test("renders with correct text", () => {
+    render(<ButtonComponent text="Click Me" onClick={() => {}} />);
+    const button = screen.getByRole("button", { name: /click me/i });
+    expect(button).toBeInTheDocument();
   });
 
-  it("calls the onClick function when the button is clicked", () => {
-    const mockOnClick = jest.fn();
-    const buttonText = "Click Me";
+  test("calls onClick handler when clicked", () => {
+    const handleClick = jest.fn();
+    render(<ButtonComponent text="Click Me" onClick={handleClick} />);
+    const button = screen.getByRole("button", { name: /click me/i });
+    fireEvent.click(button);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
 
-    render(<ButtonComponent text={buttonText} onClick={mockOnClick} />);
-
-    fireEvent.click(screen.getByRole("button", { name: buttonText }));
-
-    expect(mockOnClick).toHaveBeenCalled();
+  test("has correct styles", () => {
+    const { container } = render(
+      <ButtonComponent text="Click Me" onClick={() => {}} />
+    );
+    const button = container.querySelector("button");
+    expect(button).toHaveClass("bg-gray-950");
+    expect(button).toHaveClass("text-amber-50");
+    expect(button).toHaveClass("hover:text-red-200");
   });
 });
