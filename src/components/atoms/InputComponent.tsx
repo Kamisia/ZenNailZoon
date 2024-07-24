@@ -1,4 +1,5 @@
 import React from "react";
+
 export interface InputComponentProps {
   type:
     | "text"
@@ -21,12 +22,27 @@ export interface InputComponentProps {
     | "reset"
     | "button";
   name: string;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const InputComponent: React.FC<InputComponentProps> = ({ type, name }) => {
+
+const InputComponent: React.FC<InputComponentProps> = ({
+  type,
+  name,
+  value,
+  onChange,
+}) => {
   return (
-    <div className="m-auto w-full max-w-screen-sm">
-      <input type={type} name={name} className="w-full p-2  "></input>
+    <div className="w-full mb-4">
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        className="w-full p-2 border border-gray-300 text-black "
+      />
     </div>
   );
 };
+
 export default InputComponent;
