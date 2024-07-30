@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="fixed z-10 top-0 content-center  h-12 rounded-b-lg  flex-row flex justify-between mr-auto ml-auto w-full">
+    <div className="fixed z-20 top-0 content-center  h-12 rounded-b-lg  flex-row flex justify-between mr-auto ml-auto w-full">
       <div className="fixed z-100 top-0 content-center text-amber-50 text-sm bg-gradient-to-r from-rose-500 to-rose-400  h-12 p-3 flex-row flex justify-between mr-auto ml-auto w-screen">
         <LogoComponent text={"ZenNailZoon"} />
 
@@ -45,7 +45,8 @@ const Navbar: React.FC = () => {
           }`}
         >
           <div
-            className=" justify-start text-start px-2 pt-2 pb-3 space-y-1 sm:px-3 m-auto mt-12"
+            className=" justify-start absolute min-h-fit w-screen bg-gradient-to-r from-rose-500 to-rose-400 
+             text-start md:px-2 pt-2  pb-3 space-y-1  px-3  m-auto mt-12"
             onClick={toggleNavbar}
           >
             {links.map((link) => {
