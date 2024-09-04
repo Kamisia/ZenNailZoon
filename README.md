@@ -1,6 +1,6 @@
 # ZenNailZoon
 
-![ZenNailZoon](https://github.com/Kamisia/ZenNailZoon/blob/main/src/assets/zennailzoon.jpg)
+![ZenNailZoon](https://github.com/Kamisia/ZenNailZoon/blob/main/src/assets/zennailzoon.png)
 
 ## Project Description
 
