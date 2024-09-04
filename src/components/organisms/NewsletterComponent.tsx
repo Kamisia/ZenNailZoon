@@ -42,7 +42,13 @@ const NewsletterComponent: React.FC = () => {
         />
         {errors.email && <ErrorMessage message={errors.email.message} />}
         <div className="max-w-48 m-auto text-amber-50">
-          <ButtonComponent text="Subscribe" type="submit" />
+          <ButtonComponent
+            text="Subscribe"
+            type="submit"
+            onClick={() => {
+              onSubmit;
+            }}
+          />
         </div>
       </form>
     </div>

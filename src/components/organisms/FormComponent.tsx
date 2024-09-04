@@ -48,7 +48,9 @@ const FormComponent: React.FC = () => {
             },
           }}
         />
-        {errors.email && <ErrorMessage message={errors.email.message} />}
+        <ErrorMessage
+          message={errors.email?.message || "Default error message"}
+        />
 
         <label htmlFor="phone">Phone number:</label>
         <InputComponent

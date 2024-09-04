@@ -8,7 +8,8 @@ interface BusinessCardProps {
   number: string;
   mailAddress: string;
   text?: string;
-
+  fbhref?: string;
+  ighref?: string;
   address?: string;
   city?: string;
 }

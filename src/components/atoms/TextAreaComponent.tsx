@@ -16,7 +16,6 @@ const TextAreaComponent = <T extends FieldValues>({
 }: TextAreaComponentProps<T>) => {
   return (
     <textarea
-      name={name}
       placeholder={placeholder}
       {...register(name, validation)}
       className="h-36 w-full p-2 text-black "
