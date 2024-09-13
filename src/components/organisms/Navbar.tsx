@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="fixed z-20 top-0 content-center  h-12 rounded-b-lg  flex-row flex justify-between mr-auto ml-auto w-full">
       <div className="fixed z-100 top-0 content-center text-amber-50 text-sm bg-gradient-to-r from-rose-500 to-rose-400  h-12 p-3 flex-row flex justify-between mr-auto ml-auto w-screen">
-        <LogoComponent text={"ZenNailZoon"} />
+        <LogoComponent text={"ZenNailZone"} />
 
         <nav className=" hidden flex-row gap-4 md:flex ml-2">
           {links.map((link) => {
