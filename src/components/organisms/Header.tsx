@@ -24,7 +24,7 @@ const Header: React.FC = () => {
       <div className="m-auto hidden md:flex h-60 min-w-fit pr-5 rounded-lg bg-gray-950 bg-opacity-10 ">
         <BusinessCard
           number={"123456789"}
-          mailAddress={"ZenNailZoon@example.com"}
+          mailAddress={"ZenNailZone@example.com"}
           text={"Booking Now!"}
         />
       </div>
